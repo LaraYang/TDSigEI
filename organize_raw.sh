@@ -21,8 +21,13 @@ for subj in $(ls -d 5*); do
 			i=$(($r-1))
 				
 			if [ $i -le ${#BOLD_DIRs[@]} ] && [ ! -L ${WD}/${subj}/run${r} ]; then
-				echo ${BOLD_DIRs[i]}
-				ln -s ${BOLD_DIRs[i]} run${r}				
+				numfiles = $(ls -l ${BOLD_DIRs[i]} | wc -l)
+				if [ $numfiles -eq 102]; then
+					ln -s ${BOLD_DIRs[i]} run${r}
+				else
+					str=" does not have 102 files"
+					str =${BOLD_DIRs[i]}$str 
+					echo $str
 			fi
 
 		done
