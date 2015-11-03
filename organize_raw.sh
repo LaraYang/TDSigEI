@@ -16,18 +16,24 @@ for subj in $(ls -d 539); do
 		fi	
 	
 		BOLD_DIRs=($(ls -d tmsMRI_sequence_PA_TR1500_4mm_* | sort -V))
-
-		for r in $(seq 1 24); do
+		for (r=1; r <=24; ); do
 			i=$(($r-1))
 				
-			if [ $i -le ${#BOLD_DIRs[@]} ] && [ ! -L ${WD}/${subj}/run${r} ]; then
+			if [ $i -lt ${#BOLD_DIRs[@]} ] && [ ! -L ${WD}/${subj}/run${r} ]; then
 				numfiles = $(ls -l ${BOLD_DIRs[i]} | wc -l)
 				if [ $numfiles -eq 102]; then
 					ln -s ${BOLD_DIRs[i]} run${r}
+					$r=$r+1
 				else
 					str=" does not have 102 files"
-					str =${BOLD_DIRs[i]}$str 
+					str=${BOLD_DIRs[i]}$str 
 					echo $str
+				fi
+			elif [ $i -ge ${#BOLD_DIRs[@]} ]; then
+				str=" has fewer than 24 full blocks"
+				str=${BOLD_DIRs[i]}$str 
+				echo $str
+				break
 			fi
 
 		done
