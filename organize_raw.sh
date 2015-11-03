@@ -20,7 +20,7 @@ for subj in $(ls -d 539); do
 		for ((r=1; r <=24; )); do
 			if [ $i -lt ${#BOLD_DIRs[@]} ] && [ ! -L ${WD}/${subj}/run${r} ]; then
 				numfiles = $(ls -l ${BOLD_DIRs[i]} | wc -l)
-				if [ $numfiles -eq 102 ]; then
+				if [ $numfiles == '102' ]; then
 					ln -s ${BOLD_DIRs[i]} run${r}
 					$r=$r+1
 				else
