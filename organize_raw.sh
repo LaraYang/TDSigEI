@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# try to run script and see if it works
 
 WD='/home/despoB/TRSEPPI/TDSigEI'
 
@@ -16,7 +16,7 @@ for subj in $(ls -d 539); do
 		fi	
 	
 		BOLD_DIRs=($(ls -d tmsMRI_sequence_PA_TR1500_4mm_* | sort -V))
-		for (r=1; r <=24; ); do
+		for ((r=1; r <=24; )); do
 			i=$(($r-1))
 				
 			if [ $i -lt ${#BOLD_DIRs[@]} ] && [ ! -L ${WD}/${subj}/run${r} ]; then
