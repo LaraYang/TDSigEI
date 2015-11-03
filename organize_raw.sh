@@ -4,8 +4,8 @@
 WD='/home/despoB/TRSEPPI/TDSigEI'
 
 cd ${WD}
-for subj in $(ls -d 5*); do
-
+# for subj in $(ls -d 5*); do
+for subj in $(ls -d 539); do
 	if [ "${subj}" != "Raw" ]; then
 		cd ${WD}/${subj}
 
