@@ -5,7 +5,7 @@
 
 WD='/home/despoB/TRSEPPI/TDSigEI'
 
-for s in 539; do
+for s in P001; do
 	cd ${WD}/${s}/MPRAGE
 
 	if [ ! -e ${WD}/${s}/MPRAGE/mprage_final.nii.gz ]; then
