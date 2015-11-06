@@ -7,7 +7,7 @@ import numpy as np
 import os.path
 
 #parse block order
-os.chdir("/home/despoB/TRSEPPI/TDSigEI")
+# os.chdir("/home/despoB/TRSEPPI/TDSigEI")
 #Subjects = glob.glob('5*')
 #Subjects =[503, 505, 508, 509, 512, 513, 516, 517, 518, 523, 527]
 Subjects = [539]
