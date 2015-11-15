@@ -17,7 +17,9 @@ for subj in $(ls -d 536 537 540 542 546); do
 		BOLD_DIRs=($(ls -d tmsMRI_sequence_PA_TR1500_4mm_* | sort -V))
 		i=0
 		for ((r=1; r<=24; )); do
-			if [ $i -lt ${#BOLD_DIRs[@]} ] && [ ! -L ${WD}/${subj}/run${r} ]; then
+			if [ -L ${WD}/${subj}/run${r} ]; then
+				r=$(($r+1))	
+			elif [ $i -lt ${#BOLD_DIRs[@]} ]; then
 				numfiles=$(ls ${BOLD_DIRs[i]} | wc -l)
 				if [ $numfiles == '102' ]; then
 					ln -s ${BOLD_DIRs[i]} run${r}
