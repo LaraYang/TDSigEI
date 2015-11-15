@@ -1,11 +1,10 @@
 #!/bin/bash
-# try to run script and see if it works
 
 WD='/home/despoB/TRSEPPI/TDSigEI'
 
 cd ${WD}
 # for subj in $(ls -d 5*); do
-for subj in $(ls -d 539); do
+for subj in $(ls -d 536 537 540 542 546); do
 	if [ "${subj}" != "Raw" ]; then
 		cd ${WD}/${subj}
 
