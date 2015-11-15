@@ -1,4 +1,3 @@
-
 #!/bin/bash
 
 #run preprocessMprage on subjects.
