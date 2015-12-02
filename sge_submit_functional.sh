@@ -8,7 +8,7 @@ SCRIPTS='/home/despoB/lyang/TDSigEI'
 
 cd ${WD}
 
-for Subject in 547; do
+for Subject in 550; do
 	
 	for r in $(seq 1 1 24); do
 		if [ ! -e "${WD}/${Subject}/run${r}/nswdktm_functional_6.nii.gz" ]; then

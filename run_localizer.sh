@@ -1,12 +1,11 @@
 #!/bin/bash
 # script to localize FFA and PPA
 
-WD='/home/despoB/kaihwang/TRSE/TDSigEI'
-SCRIPTS='/home/despoB/kaihwang/TRSE/TDSigEI/Scripts'
+WD='/home/despoB/TRSEPPI/TDSigEI'
+SCRIPTS='/home/despoB/TRSEPPI/TDSigEI/Scripts'
 
-#503 505 508 509 510 512 513 516 517 518 519 523 527 528 529 530 532 534 531
-
-for s in 539; do
+# 536 537 542
+for s in 536; do
 	cd ${WD}/${s}
 
 	rm Localizer_Motor*
@@ -36,7 +35,7 @@ for s in 539; do
 
 
 	if [ ! -e ${WD}/${s}/template_brain.nii ]; then
-		ln -s /home/despoB/kaihwang/standard/mni_icbm152_nlin_asym_09c/mni_icbm152_t1_tal_nlin_asym_09c_brain.nii \
+		ln -s /home/despoB/lyang/standard/mni_icbm152_nlin_asym_09c/mni_icbm152_t1_tal_nlin_asym_09c_brain.nii \
 		template_brain.nii
 	fi
 
