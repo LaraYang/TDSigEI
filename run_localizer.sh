@@ -5,7 +5,7 @@ WD='/home/despoB/TRSEPPI/TDSigEI'
 SCRIPTS='/home/despoB/TRSEPPI/TDSigEI/Scripts'
 
 # 536 537 542
-for s in 536; do
+for s in P001; do
 	cd ${WD}/${s}
 
 	rm Localizer_Motor*
